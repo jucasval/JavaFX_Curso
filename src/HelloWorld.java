@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class HelloWorld extends Application {
@@ -15,7 +16,7 @@ public class HelloWorld extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		
 		Label label = new Label("Hola mundo");
-		Pane root = new Pane();
+		StackPane root = new StackPane();
 		
 		root.getChildren().add(label);
 		
@@ -24,6 +25,7 @@ public class HelloWorld extends Application {
 		Scene scene = new Scene(root, 300, 275);
 		
 		primaryStage.setScene(scene);
+		primaryStage.setTitle("JAVAFX 1");
 		primaryStage.show();
 	}
 
