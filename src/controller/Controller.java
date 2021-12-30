@@ -1,46 +1,44 @@
 package controller;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.shape.Circle;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
 
 
 public class Controller implements Initializable{
 	
-	@FXML
-	private Circle circle;
-	private double x;
-	private double y;
+	private Stage stage;
+	private Scene scene;
+	private Parent root;
 	
-	public void arriba(ActionEvent e) {
-		//System.out.println("Arriba");
-		circle.setCenterY(y-=10);
+	public void switchToScene1(ActionEvent e) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/view/Scene1.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/curso/application.css").toExternalForm());
+		stage.setScene(scene);
+		stage.show();
 	}
 	
-	public void abajo(ActionEvent e) {
-		//System.out.println("Abajo");
-		circle.setCenterY(y+=10);
+	public void switchToScene2(ActionEvent e) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/view/Scene2.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 	
-	public void derecha(ActionEvent e) {
-		//System.out.println("Derecha");
-		circle.setCenterX(x+=10);
-	}
-	
-	public void izquierda(ActionEvent e) {
-		//System.out.println("Izquierda");
-		circle.setCenterX(x-=10);
-	}
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
