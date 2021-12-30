@@ -17,7 +17,7 @@ public class Main extends Application {
 		
 	Parent root = FXMLLoader.load(getClass().getResource("/view/viewExample.fxml"));
 		
-		Scene scene = new Scene(root, 750, 500);
+		Scene scene = new Scene(root);
 		
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Uso de Controladores");

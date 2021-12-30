@@ -20,7 +20,16 @@ public class viewExampleController implements Initializable{
 	private Button btnAceptar;
 	
 	@FXML
-	private TextField tf1, tf2, tf3, tf4;
+	private TextField tf1;
+	
+	@FXML
+	private TextField tf2;
+	
+	@FXML
+	private TextField tf3;
+	
+	@FXML
+	private TextField tf4;
 	
 	
 	@FXML
