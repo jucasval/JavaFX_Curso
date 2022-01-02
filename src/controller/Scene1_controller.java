@@ -3,6 +3,8 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -34,14 +37,18 @@ public class Scene1_controller{
 	@FXML
 	private Label myLabel;
 	@FXML
-	private RadioButton rbt_pizza, rbt_sushi, rbt_burguer;
+	private DatePicker myDatePicker;
 	
 	
-	public void getFood(ActionEvent event) {
+	public void getDate(ActionEvent event) {
 		
-		if(rbt_pizza.isSelected()) myLabel.setText(rbt_pizza.getText());
-		else if(rbt_sushi.isSelected()) myLabel.setText(rbt_sushi.getText());
-		else if(rbt_burguer.isSelected()) myLabel.setText(rbt_burguer.getText());
+		LocalDate myDate = myDatePicker.getValue();
+		
+		
+		String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		
+		myLabel.setText(myFormattedDate);
+		//System.out.println(myFormattedDate);
 		
 	}
 	

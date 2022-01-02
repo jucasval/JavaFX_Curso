@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
    <children>
-      <RadioButton fx:id="rbt_pizza" layoutX="14.0" layoutY="182.0" mnemonicParsing="false" onAction="#getFood" text="pizza">
-         <toggleGroup>
-            <ToggleGroup fx:id="food" />
-         </toggleGroup>
-         <font>
-            <Font size="21.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="rbt_sushi" layoutX="145.0" layoutY="182.0" mnemonicParsing="false" onAction="#getFood" text="sushi" toggleGroup="$food">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="rbt_burguer" layoutX="263.0" layoutY="182.0" mnemonicParsing="false" onAction="#getFood" text="burguer" toggleGroup="$food">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </RadioButton>
-      <Label fx:id="myLabel" alignment="CENTER" layoutX="0.0" layoutY="100.0" prefHeight="26.0" prefWidth="436.0" text="Selecciona una comida" textAlignment="CENTER">
+      <Label fx:id="myLabel" alignment="CENTER" layoutX="0.0" layoutY="100.0" prefHeight="26.0" prefWidth="436.0" textAlignment="CENTER">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
+      <DatePicker fx:id="myDatePicker" layoutX="119.0" layoutY="199.0" onAction="#getDate" promptText="Introduzca una fecha" />
    </children>
 </AnchorPane>
