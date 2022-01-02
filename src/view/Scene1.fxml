@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
+<AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
    <children>
-      <Label fx:id="myLabel" alignment="CENTER" layoutX="0.0" layoutY="100.0" prefHeight="26.0" prefWidth="436.0" textAlignment="CENTER">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <DatePicker fx:id="myDatePicker" layoutX="119.0" layoutY="199.0" onAction="#getDate" promptText="Introduzca una fecha" />
+      <ColorPicker fx:id="myColorPicker" layoutX="135.0" layoutY="178.0" onAction="#changeColor" />
    </children>
 </AnchorPane>

@@ -27,7 +27,7 @@ public class Main extends Application {
 		
 		
 		stage.setScene(scene);
-		stage.setTitle("DatePicker");
+		stage.setTitle("ColorPicker");
 		stage.show();
 		
 		
