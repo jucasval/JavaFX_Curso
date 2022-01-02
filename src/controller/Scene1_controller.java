@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,32 +30,20 @@ import javafx.stage.Stage;
 
 public class Scene1_controller{
 	
-	Image encendida = new Image(getClass().getResourceAsStream("/images/encendida.jpg"));
-	Image apagada = new Image(getClass().getResourceAsStream("/images/apagada.png"));
 	
 	@FXML
 	private Label myLabel;
 	@FXML
-	private ImageView myImageView;
-	@FXML
-	private CheckBox myCheckBox;
+	private RadioButton rbt_pizza, rbt_sushi, rbt_burguer;
 	
 	
-	
-	public void change(ActionEvent event) {
+	public void getFood(ActionEvent event) {
 		
-		if(myCheckBox.isSelected()) {
-			//System.out.println("ON");
-			myLabel.setText("ON");
-			myImageView.setImage(encendida);
-		}else {
-			//System.out.println("OFF");
-			myLabel.setText("OFF");
-			myImageView.setImage(apagada);
-		}
+		if(rbt_pizza.isSelected()) myLabel.setText(rbt_pizza.getText());
+		else if(rbt_sushi.isSelected()) myLabel.setText(rbt_sushi.getText());
+		else if(rbt_burguer.isSelected()) myLabel.setText(rbt_burguer.getText());
 		
 	}
-	
 	
 	
 

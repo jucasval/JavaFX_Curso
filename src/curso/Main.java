@@ -27,7 +27,7 @@ public class Main extends Application {
 		
 		
 		stage.setScene(scene);
-		stage.setTitle("CheckBox");
+		stage.setTitle("RadioButtons");
 		stage.show();
 		
 		
