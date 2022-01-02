@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -28,38 +29,33 @@ import javafx.stage.Stage;
 
 public class Scene1_controller{
 	
-	int edad;
-	
-	@FXML	
-	private Label lbEdad;
+	Image encendida = new Image(getClass().getResourceAsStream("/images/encendida.jpg"));
+	Image apagada = new Image(getClass().getResourceAsStream("/images/apagada.png"));
 	
 	@FXML
-	private Button btnEnviar;
-	
+	private Label myLabel;
 	@FXML
-	private TextField txtEdad;
+	private ImageView myImageView;
+	@FXML
+	private CheckBox myCheckBox;
 	
-	public void enviarEdad(ActionEvent event) {
+	
+	
+	public void change(ActionEvent event) {
 		
-		try {
-			
-			edad = Integer.parseInt(txtEdad.getText());
-			System.out.println(edad);
-			
-			if(edad >= 18) lbEdad.setText("Enhorabuena, estás conectado !!!");
-			else lbEdad.setText("Debes ser 18+ para poder conectarte");
-		
-		} catch (NumberFormatException nfe) {
-			System.out.println("Introduzca una edad correcta, please");
-			txtEdad.setText("");
-			lbEdad.setText("Introduzca una edad correcta, please");
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println(e);
-			lbEdad.setText("Error");
+		if(myCheckBox.isSelected()) {
+			//System.out.println("ON");
+			myLabel.setText("ON");
+			myImageView.setImage(encendida);
+		}else {
+			//System.out.println("OFF");
+			myLabel.setText("OFF");
+			myImageView.setImage(apagada);
 		}
 		
 	}
+	
+	
+	
 
 }

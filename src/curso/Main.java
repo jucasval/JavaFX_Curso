@@ -27,7 +27,7 @@ public class Main extends Application {
 		
 		
 		stage.setScene(scene);
-		stage.setTitle("Logout");
+		stage.setTitle("CheckBox");
 		stage.show();
 		
 		
