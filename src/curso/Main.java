@@ -27,7 +27,7 @@ public class Main extends Application {
 		
 		
 		stage.setScene(scene);
-		stage.setTitle("ColorPicker");
+		stage.setTitle("ChoiceBox");
 		stage.show();
 		
 		

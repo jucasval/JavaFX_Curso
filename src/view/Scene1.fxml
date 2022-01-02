@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
    <children>
-      <ColorPicker fx:id="myColorPicker" layoutX="135.0" layoutY="178.0" onAction="#changeColor" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutY="51.0" prefHeight="16.0" prefWidth="429.0" text="Elige una comida">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="myChoiceBox" layoutX="140.0" layoutY="196.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
