@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
+<AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
    <children>
-      <Label fx:id="myLabel" alignment="CENTER" layoutY="51.0" prefHeight="16.0" prefWidth="429.0" text="Elige una comida">
+      <Slider fx:id="mySlider" layoutX="192.0" layoutY="46.0" majorTickUnit="10.0" minorTickCount="10" orientation="VERTICAL" prefHeight="386.0" prefWidth="46.0" showTickLabels="true" showTickMarks="true" value="10.0" />
+      <Label fx:id="myLabel" layoutX="285.0" layoutY="221.0" text="Label">
          <font>
-            <Font size="33.0" />
+            <Font size="28.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="myChoiceBox" layoutX="140.0" layoutY="196.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

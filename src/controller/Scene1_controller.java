@@ -6,52 +6,57 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ColorPicker;
+
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
+import javafx.scene.control.Slider;
+
 
 
 
 public class Scene1_controller implements Initializable{
 	
 	/*
-	 * Desafortunadamente, SceneBuilder no me da la opción de crear items para el objeto ChoiceBox, así que tenemos que hacerlo
-	 * con código.
+	 * SceneBuilder no me permite crear el evento para cuando cambia la posición del Slider, así pues que lo haremos con código.
 	 * 
-	 * Tampoco me permite crear el evento onAction, así que lo crearemos también con código.
-	 * 
-	 * Para ello tendremos que implementar la interface Initializable
+	 * Para ello implementamos la interfaz Initializable y dentro del método initialize crearemos el evento que necesitamos para 
+	 * el Slider.
 	 * */
 	
 	@FXML
-	private ChoiceBox<String> myChoiceBox;
-	@FXML
 	private Label myLabel;
+	@FXML
+	private Slider mySlider; 
 	
-	private String[] food = {"pizza", "sushi", "burguer"};
+	int temp;
 	
-	public void getFood(ActionEvent event) {
-		
-		String myFood = myChoiceBox.getValue();
-		myLabel.setText(myFood);
-		
-	}
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
 		
-		//inicializamos los items de nuestro ChoiceBox
-		myChoiceBox.getItems().addAll(food);
-		myChoiceBox.setOnAction(this::getFood); //CREAMO EL EVENTO onAction
+		myLabel.setText((int)mySlider.getValue() + " ºC");
+		
+		mySlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {				
+				
+				temp = (int)mySlider.getValue();
+				
+				myLabel.setText(temp + " ºC");
+			}
+			
+		});
 		
 	}
+
+	
 	
 	
 
