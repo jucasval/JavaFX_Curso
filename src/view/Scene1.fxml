@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Scene1_controller">
    <children>
-      <Button fx:id="btn_logout" layoutX="230.0" layoutY="188.0" mnemonicParsing="false" onAction="#logout" text="Finalizar Programa" />
+      <Button fx:id="myButtton" layoutX="269.0" layoutY="362.0" mnemonicParsing="false" onAction="#displayImage" text="Button" />
+      <ImageView fx:id="myImageView" fitHeight="308.0" fitWidth="401.0" layoutX="100.0" layoutY="14.0" onMouseEntered="#displayImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/foto1.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

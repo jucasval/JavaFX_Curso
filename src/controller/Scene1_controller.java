@@ -17,6 +17,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -25,31 +27,20 @@ import javafx.stage.Stage;
 
 public class Scene1_controller{
 	
+	//ImageView es un nodo para pintar imagenes cargadas con la clase Images
 	
+	//Image = photograph
+	
+	//ImageView = marco para la imagen
 	
 	@FXML
-	private Button	btn_logout;
+	private ImageView myImageView;
+	private Button myButton;
 	
-	@FXML
-	private AnchorPane scenePane;
+	Image myImage = new Image(getClass().getResourceAsStream("/images/foto2.jpg"));	
 	
-	private Stage stage;
-	
-	public void logout(ActionEvent e) throws IOException {
-		
-		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("Logout");
-		alert.setHeaderText("Estas a punto de desconectarte");
-		alert.setContentText("¿Quieres guardar los cambios antes de salir?:");
-		
-		if(alert.showAndWait().get() == ButtonType.OK) {
-			stage = (Stage) scenePane.getScene().getWindow();
-			System.out.println("Te desconectaste correctamente");
-			stage.close();
-		}
-		
-		
-		
+	public void displayImage() {
+		myImageView.setImage(myImage);
 	}
 	
 	
