@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -27,23 +28,38 @@ import javafx.stage.Stage;
 
 public class Scene1_controller{
 	
-	//ImageView es un nodo para pintar imagenes cargadas con la clase Images
+	int edad;
 	
-	//Image = photograph
-	
-	//ImageView = marco para la imagen
+	@FXML	
+	private Label lbEdad;
 	
 	@FXML
-	private ImageView myImageView;
-	private Button myButton;
+	private Button btnEnviar;
 	
-	Image myImage = new Image(getClass().getResourceAsStream("/images/foto2.jpg"));	
+	@FXML
+	private TextField txtEdad;
 	
-	public void displayImage() {
-		myImageView.setImage(myImage);
+	public void enviarEdad(ActionEvent event) {
+		
+		try {
+			
+			edad = Integer.parseInt(txtEdad.getText());
+			System.out.println(edad);
+			
+			if(edad >= 18) lbEdad.setText("Enhorabuena, estás conectado !!!");
+			else lbEdad.setText("Debes ser 18+ para poder conectarte");
+		
+		} catch (NumberFormatException nfe) {
+			System.out.println("Introduzca una edad correcta, please");
+			txtEdad.setText("");
+			lbEdad.setText("Introduzca una edad correcta, please");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+			lbEdad.setText("Error");
+		}
+		
 	}
-	
-	
-	
 
 }
